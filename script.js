@@ -76,7 +76,7 @@ $(document).ready(function() {
 
 let mouseCursor = document.querySelector(".cursor");
 let navlinks = document.querySelectorAll(".menu li");
-window.addEventListener('mousemove',cursor);
+window.addEventListener('mousemove', cursor);
 
 function cursor(e) {
   mouseCursor.style.top = e.pageY + 'px';
@@ -84,10 +84,19 @@ function cursor(e) {
 }
 
 navlinks.forEach(link => {
-  link.addEventListener("mouseleave",() => {
+  link.addEventListener("mouseleave", () => {
     mouseCursor.classList.remove("link-grow");
   });
-  link.addEventListener("mouseover",() => {
+  link.addEventListener("mouseover", () => {
     mouseCursor.classList.add("link-grow");
   });
 });
+
+//webhub rgb
+let tst = document.querySelector(".logo");
+let nbnb = document.querySelector("#titu");
+
+function fxn() {
+  nbnb.style.color = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+}
+tst.addEventListener('mouseover', fxn);
